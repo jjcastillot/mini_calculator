@@ -1,0 +1,72 @@
+:root {
+    --body-color: rgb(75, 74, 74);
+    --screen-color: rgb(96, 136, 49);
+    --screen-text: black;
+    --button-color: black;
+    --button-text: whitesmoke;
+    --borders: rgb(189, 189, 189);
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Courier New', Courier, monospace;
+}
+
+.calculator {
+    background-color: var(--body-color);   
+    width: 400px;
+    padding: 20px;  
+    border-radius: 5px; 
+
+}
+
+.screen {
+    background-color: var(--screen-color);
+    color: var(--screen-text);
+    text-align: right;
+    margin-bottom: 10px;
+    border: 2px var(--borders);
+    border-radius: 5px;
+}
+
+.inputs {
+    font-size: 20px;
+    min-height: 32px;
+}
+
+.results {
+    font-size: 40px;
+    min-height: 64px;
+}
+
+.button_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+.btn {
+    padding: 20px;
+    border: 2px var(--borders);
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--button-text);
+    font-size: 20px;
+}
+
+.btn-pink {
+    background-color: rgb(236, 18, 145);
+    color: black;
+}
+
+.btn-yellow {
+    background-color: rgb(247, 226, 39);
+    color: black;
+}
