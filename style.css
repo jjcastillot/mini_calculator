@@ -1,10 +1,13 @@
 :root {
-    --body-color: rgb(75, 74, 74);
+    --body-color: rgb(49, 49, 49);
     --screen-color: rgb(96, 136, 49);
     --screen-text: black;
     --button-color: black;
     --button-text: whitesmoke;
-    --borders: rgb(189, 189, 189);
+    --borders: rgb(87, 87, 87);
+    --pink-button: rgb(236, 18, 145);
+    --yellow-button: rgb(247, 226, 39);
+    --button-hover: ivory;
 }
 
 *, *::after, *::before {
@@ -12,15 +15,15 @@
 }
 
 body {
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Helvetica', sans-serif;
 }
 
 .calculator {
     background-color: var(--body-color);   
     width: 400px;
     padding: 20px;  
-    border-radius: 5px; 
-
+    border: 2px solid var(--borders);
+    border-radius: 5px;
 }
 
 .screen {
@@ -28,7 +31,7 @@ body {
     color: var(--screen-text);
     text-align: right;
     margin-bottom: 10px;
-    border: 2px var(--borders);
+    border: 2px solid var(--borders);
     border-radius: 5px;
 }
 
@@ -54,19 +57,23 @@ body {
 
 .btn {
     padding: 20px;
-    border: 2px var(--borders);
+    border: 2px solid var(--borders);
     border-radius: 5px;
     background-color: var(--button-color);
     color: var(--button-text);
     font-size: 20px;
 }
 
+.btn:hover {
+    border-color: var(--button-hover); 
+}
+
 .btn-pink {
-    background-color: rgb(236, 18, 145);
-    color: black;
+    background-color: var(--pink-button);
+    color: var(--screen-text);
 }
 
 .btn-yellow {
-    background-color: rgb(247, 226, 39);
-    color: black;
+    background-color: var(--yellow-button);
+    color: var(--screen-text);
 }
