@@ -1,3 +1,4 @@
+// Basic math operations
 function add(a,b) {
     return a+b;
 };
@@ -31,3 +32,14 @@ function operate(op,a,b) {
             return null;
     }
 }
+
+// Display numbers on the screen
+const inputScreen = document.querySelector('.inputs');
+const numbers = Array.from(document.querySelectorAll('[data-number]'));
+numbers.forEach(number => number.addEventListener('onclick', showOnScreen));
+
+function showOnScreen(e) {
+    console.log(e.target.textContent);
+}
+
+  
