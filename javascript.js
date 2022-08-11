@@ -35,11 +35,14 @@ function operate(op,a,b) {
 
 // Display numbers on the screen
 const inputScreen = document.querySelector('.inputs');
+const resultScreen = document.querySelector('.results');
 const numbers = Array.from(document.querySelectorAll('[data-number]'));
-numbers.forEach(number => number.addEventListener('onclick', showOnScreen));
+const operations = Array.from(document.querySelectorAll('[data-operator]'));
+numbers.forEach((number) => number.addEventListener('click', showOnScreen));
+operations.forEach((operation) => operation.addEventListener('click', showOnScreen));
 
 function showOnScreen(e) {
-    console.log(e.target.textContent);
+    inputScreen.textContent += e.target.textContent;
 }
 
   

@@ -38,6 +38,8 @@ body {
 .inputs {
     font-size: 20px;
     min-height: 32px;
+    padding-top: 2px;
+    padding-right: 2px;
 }
 
 .results {
