@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'calculatorregular';
+    src: url('fonts/calculator-webfont.woff2') format('woff2'),
+         url('fonts/calculator-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 :root {
     --body-color: rgb(49, 49, 49);
     --screen-color: rgb(96, 136, 49);
@@ -27,24 +36,17 @@ body {
 }
 
 .screen {
+    font-family: 'calculatorregular', sans-serif;
     background-color: var(--screen-color);
     color: var(--screen-text);
     text-align: right;
     margin-bottom: 10px;
     border: 2px solid var(--borders);
     border-radius: 5px;
-}
-
-.inputs {
-    font-size: 20px;
-    min-height: 32px;
-    padding-top: 2px;
-    padding-right: 2px;
-}
-
-.results {
     font-size: 40px;
     min-height: 64px;
+    padding-top: 6px;
+    padding-right: 4px;
 }
 
 .button_grid {
