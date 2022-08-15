@@ -47,11 +47,13 @@ const numbers = Array.from(document.querySelectorAll('[data-number]'));
 const operations = Array.from(document.querySelectorAll('[data-operator]'));
 const equalsButton = document.getElementById('equalsButton');
 const clearButton =document.getElementById('clearButton');
+const delButton =document.getElementById('deleteButton');
 
 numbers.forEach((number) => number.addEventListener('click', showOnScreen));
 operations.forEach((operation) => operation.addEventListener('click', setOperation));
 equalsButton.addEventListener('click', solveOp);
 clearButton.addEventListener('click', clearCalc);
+delButton.addEventListener('click', deleteChar);
 
 function showOnScreen(e) {
     if (shouldReset) {
@@ -84,5 +86,9 @@ function clearCalc() {
     firstOperand = '';
     secondOperand = '';
     op = null;
-  }
+}
+
+function deleteChar() {
+    screen.textContent = screen.textContent.replace(/.$/, '');
+}
   
