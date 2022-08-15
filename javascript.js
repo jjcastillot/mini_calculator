@@ -48,12 +48,15 @@ const operations = Array.from(document.querySelectorAll('[data-operator]'));
 const equalsButton = document.getElementById('equalsButton');
 const clearButton =document.getElementById('clearButton');
 const delButton =document.getElementById('deleteButton');
+const pointButton = document.getElementById('pointButton');
 
 numbers.forEach((number) => number.addEventListener('click', showOnScreen));
 operations.forEach((operation) => operation.addEventListener('click', setOperation));
 equalsButton.addEventListener('click', solveOp);
 clearButton.addEventListener('click', clearCalc);
 delButton.addEventListener('click', deleteChar);
+pointButton.addEventListener('click', addPoint);
+
 
 function showOnScreen(e) {
     if (shouldReset) {
@@ -71,6 +74,7 @@ function setOperation(e) {
 }
 
 function solveOp() {
+    if (op === null) return;
     secondOperand = screen.textContent;
     screen.textContent = roundOp(operate(op,firstOperand,secondOperand));
     op = null;
@@ -90,5 +94,14 @@ function clearCalc() {
 
 function deleteChar() {
     screen.textContent = screen.textContent.replace(/.$/, '');
+}
+
+function addPoint() {
+    if (screen.textContent === '' || shouldReset === true) {
+        screen.textContent = '0';
+        shouldReset = false;
+    }   
+    if (screen.textContent.includes('.')) return;
+    screen.textContent += '.';
 }
   
