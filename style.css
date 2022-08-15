@@ -55,6 +55,10 @@ body {
     grid-gap: 10px;
 }
 
+.credits {
+    font-size: 12px;
+}
+
 .wide {
     grid-column: span 2;
 }
