@@ -46,10 +46,12 @@ const screen = document.querySelector('.screen');
 const numbers = Array.from(document.querySelectorAll('[data-number]'));
 const operations = Array.from(document.querySelectorAll('[data-operator]'));
 const equalsButton = document.getElementById('equalsButton');
+const clearButton =document.getElementById('clearButton');
 
 numbers.forEach((number) => number.addEventListener('click', showOnScreen));
 operations.forEach((operation) => operation.addEventListener('click', setOperation));
 equalsButton.addEventListener('click', solveOp);
+clearButton.addEventListener('click', clearCalc);
 
 function showOnScreen(e) {
     if (shouldReset) {
@@ -76,3 +78,11 @@ function solveOp() {
 function roundOp(number) {
     return Math.round(number * 10000) / 10000;  
 }
+
+function clearCalc() {
+    screen.textContent = '';
+    firstOperand = '';
+    secondOperand = '';
+    op = null;
+  }
+  
